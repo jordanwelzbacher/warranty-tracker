@@ -7,5 +7,13 @@ export default {
 
   getById(id) {
     return axios.get(`/warranty/${id}`);
+  },
+
+  deleteById(id) {
+    return axios.delete(`/warranty/${id}`)
+  },
+
+  add(warranty) {
+    return axios.post('/warranty', warranty)
   }
 }

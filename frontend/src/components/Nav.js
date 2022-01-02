@@ -36,7 +36,7 @@ function Nav(props) {
           <ListItemIcon><ViewListIcon /></ListItemIcon>
           <ListItemText primary='My Warranties' />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={Link} to={'/edit'}>
           <ListItemIcon><AddIcon /></ListItemIcon>
           <ListItemText primary='Add Warranty' />
         </ListItem>
@@ -54,7 +54,7 @@ function Nav(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar
-        position="static"
+        position="sticky"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },

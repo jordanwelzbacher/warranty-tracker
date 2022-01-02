@@ -43,7 +43,6 @@ const WarrantyList = () => {
     const data = await WarrantyService.getAll(1);
     const { warranties } = data.data;
     setWarrantyList(warranties);
-    console.log(warranties);
   }
 
   useEffect(() => {
@@ -51,7 +50,6 @@ const WarrantyList = () => {
   }, [])
 
   function handleRowClick(id) {
-    console.log(id);
     navigate(`/warranty/${id}`);
   }
 
@@ -74,7 +72,9 @@ const WarrantyList = () => {
             Proof of Purchase
           </Typography>
           {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}> */}
-            <img src={popImageUrl} maxHeight="window.innerHeight" />
+            <img src={popImageUrl} height="500px" />
+            <br/>
+            <a target ="_blank" href={popImageUrl}>Click here to open full-sized image in a separate tab</a>
           {/* </Typography> */}
         </Box>
       </Modal>

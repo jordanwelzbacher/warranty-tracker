@@ -95,19 +95,18 @@ class Warranty(db.Model):
 
 @app.route('/warranty', methods = ['POST'])
 def create_warranty():
-    user_id = request.json['user_id']
+    print(request.json)
+    user_id = request.json['userId']
     product = request.json['product']
-    purchase_date = request.json['purchase_date']
-    expiration_date = request.json['expiration_date']
+    purchase_date = request.json['purchaseDate']
+    expiration_date = request.json['expirationDate']
     issuer = request.json['issuer']
-    issuer_type_id = request.json['issuer_type_id']
-    pop_url = request.json['pop_url']
+    issuer_type_id = request.json['issuerTypeId']
+    pop_url = request.json['popUrl']
 
     warranty = Warranty(user_id, product, purchase_date, expiration_date, issuer, issuer_type_id, pop_url)
-
     db.session.add(warranty)
     db.session.commit()
-
     return warranty.format_warranty(), 201
 
 @app.route('/warranties/<id>', methods = ['GET'])

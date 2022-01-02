@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import HomePage from './components/HomePage';
 import WarrantyList from './components/WarrantyList';
-import AddWarrantyForm from './components/AddWarrantyForm';
+import WarrantyForm from './components/WarrantyForm';
 import Warranty from './components/Warranty';
 
 import Nav from './components/Nav';
@@ -23,7 +23,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path='/warranties' element={<WarrantyList />} />
             <Route path='/warranty/:id' element={<Warranty />} />
-            <Route path="/add" element={<AddWarrantyForm />} />
+            <Route path="/edit/:id" element={<WarrantyForm />} />
+            <Route path="/edit" element={<WarrantyForm />} />
           </Routes>
         </Container>
       </Router>
