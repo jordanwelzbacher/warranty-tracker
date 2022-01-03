@@ -39,15 +39,15 @@ const WarrantyList = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    fetchWarranties();
+  }, [])
+
   const fetchWarranties = async () => {
     const data = await WarrantyService.getAll(1);
     const { warranties } = data.data;
     setWarrantyList(warranties);
   }
-
-  useEffect(() => {
-    fetchWarranties();
-  }, [])
 
   function handleRowClick(id) {
     navigate(`/warranty/${id}`);

@@ -15,5 +15,9 @@ export default {
 
   add(warranty) {
     return axios.post('/warranty', warranty)
+  },
+
+  updateById(id, warranty) {
+    return axios.put(`/warranty/${id}`, warranty)
   }
 }

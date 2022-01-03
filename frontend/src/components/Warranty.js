@@ -94,7 +94,7 @@ const Warranty = () => {
           </TableBody>
         </Table>
         <div sx={{ m: 4 }}>
-          <Button sx={{ mt: 3, mx: 2 }} variant="outlined" >Update</Button>
+          <Button sx={{ mt: 3, mx: 2 }} variant="outlined" onClick={() => navigate(`/edit/${id}`)}>Update</Button>
           <Button sx={{ mt: 3, mx: 2 }} variant="outlined" color="error" onClick={handleDeleteClick}>Delete</Button>
 
         </div>

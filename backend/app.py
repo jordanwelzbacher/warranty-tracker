@@ -132,12 +132,14 @@ def delete_warranty_by_id(id):
 @app.route('/warranty/<id>', methods = ['PUT'])
 def update_warranty_by_id(id):
     warranty = Warranty.query.filter_by(id=id)
-    user_id = request.json['user_id']
+    user_id = request.json['userId']
     product = request.json['product']
-    purchase_date = request.json['purchase_date']
-    expiration_date = request.json['expiration_date']
-    issuer_type_id = request.json['issuer_type_id']
-    warranty.update(dict(user_id = user_id, product = product, purchase_date = purchase_date, expiration_date = expiration_date, issuer_type_id = issuer_type_id))
+    purchase_date = request.json['purchaseDate']
+    expiration_date = request.json['expirationDate']
+    issuer = request.json['issuer']
+    issuer_type_id = request.json['issuerTypeId']
+    pop_url = request.json['popUrl']
+    warranty.update(dict(user_id = user_id, product = product, purchase_date = purchase_date, expiration_date = expiration_date, issuer = issuer, issuer_type_id = issuer_type_id, pop_url = pop_url))
     db.session.commit()
     return {'warranty': warranty.one().format_warranty()}
 
